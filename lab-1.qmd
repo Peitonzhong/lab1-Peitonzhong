@@ -1,6 +1,6 @@
 ---
 title: "Lab 1 - Data visualization"
-author: "[INSERT NAME]"
+author: "Miranda Zhong"
 format: pdf
 editor: visual
 ---
@@ -9,14 +9,17 @@ editor: visual
 
 ```{r}
 #| label: load-packages
-#| message: false
-
 library(tidyverse)
+library(viridis)
 ```
 
 ## Exercise 1
 
-(Type your answer to Exercise 1 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+```{r}
+glimpse(midwest)
+ggplot(midwest,
+       aes(x= popdensity)) + geom_histogram(binwidth = 10000) 
+```
 
 ## Exercise 2
 
@@ -28,11 +31,8 @@ library(tidyverse)
 
 ## Exercise 4
 
-
 ## Exercise 5
 
-
 ## Exercise 6
-
 
 ## Exercise 7
