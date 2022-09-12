@@ -34,23 +34,41 @@ ggplot(midwest,
 Most state have very similar college percentage, clustered around 10-20% with 10-20% below the poverty line. This means the amount of population that revieves college degree is roughly the same as the amount of people in poverty. 
 
 ## Exercise 4
-```{r}
+```{r ex-4}
 ggplot(midwest,
        aes(x=percollege, y= percbelowpoverty, color= state))+ geom_smooth(se=FALSE) +facet_wrap(~state) + labs(title= "college percentage vs percentage below poverty", x = "college percentage", y = "percentage below poverty")
 ```
 Personally I would prefer this plot over the plot from exercise 2. This plot shows the trend of how the percentage of college attendees change according to the percentage below poverty. From this graph one can see WI is the state with the least amount of college attendee percentage with the greatest amount of percentage below poverty. Meanwhile, plot from exercise 2 only shows the general relative comparison between poverty and college percentage without specify the trend within each state. 
 ## Exercise 5
 
-boxplot area vs state
+```{r ex-5}
+ggplot(midwest,
+       aes(x= area, y=state, fill=state))+ geom_boxplot()+ labs(title= "Area of County by States", x = "Area of County", y = "State")
+
+```
+Based on the graph, On average, IN has the smallest county, and MI has the single largest county.This is because MI has a large outlier county located at the far right of the graph. 
 
 ## Exercise 6
 
 ```{r}
 midwest <- midwest |>
   mutate(metro = if_else(inmetro == 1, "Yes", "No"))
-
+ggplot(midwest,aes(x= state, fill=metro))+ geom_bar(position="fill") + labs(title= "Do some states have a higher percentage of their counties located in a metropolitan area?", x = "State", y = "Percentage of Counties in Metro")
 ```
-google what is a segmented bar chart
-
 
 ## Exercise 7
+```{r ex-7}
+ggplot(midwest,
+       aes(x= area, y=state, fill=state))+ geom_boxplot()+ labs(title= "Area of County by States", x = "Area of County", y = "State")
+```
+
+
+
+
+
+
+
+
+
+
+
