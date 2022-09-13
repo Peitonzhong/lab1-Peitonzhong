@@ -36,7 +36,7 @@ Most state have very similar college percentage, clustered around 10-20% with 10
 ## Exercise 4
 ```{r ex-4}
 ggplot(midwest,
-       aes(x=percollege, y= percbelowpoverty, color= state))+ geom_smooth(se=FALSE) +facet_wrap(~state) + labs(title= "college percentage vs percentage below poverty", x = "college percentage", y = "percentage below poverty")
+       aes(x=percollege, y= percbelowpoverty, color= state))+ geom_smooth(se=FALSE)+facet_wrap(~state) + labs(title= "college percentage vs percentage below poverty", x = "college percentage", y = "percentage below poverty")
 ```
 Personally I would prefer this plot over the plot from exercise 2. This plot shows the trend of how the percentage of college attendees change according to the percentage below poverty. From this graph one can see WI is the state with the least amount of college attendee percentage with the greatest amount of percentage below poverty. Meanwhile, plot from exercise 2 only shows the general relative comparison between poverty and college percentage without specify the trend within each state. 
 ## Exercise 5
@@ -59,7 +59,9 @@ ggplot(midwest,aes(x= state, fill=metro))+ geom_bar(position="fill") + labs(titl
 ## Exercise 7
 ```{r ex-7}
 ggplot(midwest,
-       aes(x= area, y=state, fill=state))+ geom_boxplot()+ labs(title= "Area of County by States", x = "Area of County", y = "State")
+       aes(x=percollege, y= popdensity, color= percbelowpoverty))+ geom_point(size=2, alpha=0.5) + facet_wrap(~state) + theme_minimal()+ 
+    labs(title= "Do people with college degrees tends to live in denser areas?", 
+    x = "%college educated", y = "Population density (person/unit area)",colour = "% below poverty line")
 ```
 
 
